@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="escola.alumnos_tree">
+      <field name="name">EscolaAlumnos tree</field>
+      <field name="model">escola.alumnos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="dni"/>
+          <field name="fecha_nacimiento"/>
+          <field name="edad"/>
+          <field name="clase"/>
+          <field name="eventos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="escola.alumnos_form">
+      <field name="name">EscolaAlumnos form</field>
+      <field name="model">escola.alumnos</field>
+      <field name="arch" type="xml">
+        <form string="Escola Alumnos Form">
+          <sheet>
+            <group>
+              <field name="nombre"/>
+              <field name="apellidos"/>
+              <field name="dni"/>
+              <field name="fecha_nacimiento"/>
+              <field name="clase"/>
+              <field name="eventos"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="escola.alumnos_window">
+      <field name="name">Escola Alumnos window</field>
+      <field name="res_model">escola.alumnos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="gestio_escola.action_server">
+      <field name="name">GestioEscola server</field>
+      <field name="model_id" ref="model_gestio_escola_gestio_escola"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <!--<menuitem name="Alumnos" id="escola.alumnos_menu_root"/>-->
+
+    <!-- menu categories -->
+
+    <menuitem name="Alumnos" id="escola.alumnos_menu_1" parent="escola.eventos_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Alumnos" id="escola.alumnos_menu_1_list" parent="escola.alumnos_menu_1"
+              action="escola.alumnos_window"/>
+
+  </data>
+</odoo>
