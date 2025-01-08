@@ -10,6 +10,7 @@ class alumnos_escola(models.Model):
     nombre = fields.Char(string="Nombre")
     apellidos = fields.Char(string="Apellidos")
     dni = fields.Char(string="dni")
+    _sql_constraints = [('dni_unique','UNIQUE(dni)','El dni debe ser único.')]
     fecha_nacimiento = fields.Date(string="Fecha de nacimiento")
     edad = fields.Integer(compute="_get_edad")
     clase = fields.Many2one('escola.clases', string="Clase", ondelete="cascade")
@@ -47,3 +48,4 @@ class alumnos_escola(models.Model):
                 
             else:
                 r.edad = -1
+                
