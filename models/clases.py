@@ -15,6 +15,7 @@ class clases_escola(models.Model):
     alumnos = fields.One2many(comodel_name='escola.alumnos', inverse_name='clase',string="Alumnos de la clase")
     total_alumnos = fields.Integer(string="Total de alumnos",compute="_compute_alumnos")
     descripcion = fields.Char(string="Descripción", required=True, help="Introduce una descripción")
+    activo = fields.Boolean(string="Activo", default=True)
     
     @api.depends('alumnos')
     def _compute_alumnos(self):
