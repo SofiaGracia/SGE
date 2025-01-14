@@ -25,6 +25,7 @@
     # always loaded
     # L'ordre en el manifest es important
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/eventos.xml',
         'views/profesores.xml',

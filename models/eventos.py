@@ -8,7 +8,7 @@ class eventos_escola(models.Model):
     _description = 'escola.eventos'
 
     #Hem de posar-li un nom a l'event
-    nombre = fields.Char(string="Nombre del evento", compute="_compute_nom")
+    #nombre = fields.Char(string="Nombre del evento", compute="_compute_nom")
 
     # Esta funció tamb pot ser una lambda
     #def _obtindre_data(self):
@@ -27,8 +27,3 @@ class eventos_escola(models.Model):
     # profesor = fields.Many2many('escola.profesors', string="Professors")
     # Relación con alumno
     alumno = fields.Many2many('escola.alumnos', string="Alumnos")
-    
-    @api.depends('clase')
-    def _compute_nom(self):
-        for r in self:
-            
