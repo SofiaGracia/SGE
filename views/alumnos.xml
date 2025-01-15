@@ -7,6 +7,9 @@
       <field name="model">escola.alumnos</field>
       <field name="arch" type="xml">
         <tree>
+          <!-- <header>
+            <button name="%(lanzar_wizard)d" type="action" string="Lanzar wizard" class="oe_highlight" />
+          </header> -->
           <field name="nombre"/>
           <field name="apellidos"/>
           <field name="dni"/>

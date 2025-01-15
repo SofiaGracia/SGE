@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_alumnos_wizard_form" model="ir.ui.view">
+        <field name="name">alumnos.wizard.form</field>
+        <field name="model">alumnos.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Indicar la fecha">
+                <group>
+                    <field name="fecha_prova"/>
+                </group>
+                <footer>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="lanzar_wizard" model="ir.actions.act_window">
+        <field name="name">Lanzar wizard</field>
+        <field name="res_model">alumnos.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

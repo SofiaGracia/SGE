@@ -7,6 +7,7 @@ class alumnos_escola(models.Model):
     _name = 'escola.alumnos'
     _description = 'escola.alumnos'
 
+    active = fields.Boolean('Activo', default=False)
     nombre = fields.Char(string="Nombre")
     apellidos = fields.Char(string="Apellidos")
     dni = fields.Char(string="dni")

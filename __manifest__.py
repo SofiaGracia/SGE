@@ -30,6 +30,7 @@
         'views/eventos.xml',
         'views/profesores.xml',
         'views/clases.xml',
+        'views/wizard_alumnos.xml',
         'views/alumnos.xml',
         'views/templates.xml',
     ],
