@@ -7,6 +7,7 @@
       <field name="model">escola.eventos</field>
       <field name="arch" type="xml">
         <tree>
+          <!--<field name="nombre"/>-->
           <field name="tipo"/>
           <field name="fecha"/>
           <field name="descripcion"/>
@@ -23,6 +24,7 @@
         <form string="Escola Eventos Form">
           <sheet>
             <group>
+              <!--<field name="nombre"/> -->
               <field name="tipo"/>
               <field name="fecha"/>
               <field name="descripcion"/>

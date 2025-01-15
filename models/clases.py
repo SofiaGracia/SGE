@@ -10,7 +10,7 @@ class clases_escola(models.Model):
     nivel = fields.Selection([('0','1'), ( '1','2')], string="Nivel", default="0")
     fecha_inicio = fields.Date(string="Fecha inicio")
     fecha_final = fields.Date(string="Fecha final")
-    tutor = fields.Many2one('hr.employee', string="Profesor", ondelete="cascade")
+    tutor = fields.Many2one('hr.employee', string="Profesor", ondelete="cascade",domain=[('es_professor','=',True)])
     #Numero de alumnos (calculado)
     alumnos = fields.One2many(comodel_name='escola.alumnos', inverse_name='clase',string="Alumnos de la clase")
     total_alumnos = fields.Integer(string="Total de alumnos",compute="_compute_alumnos")

@@ -7,12 +7,20 @@ class eventos_escola(models.Model):
     _name = 'escola.eventos'
     _description = 'escola.eventos'
 
-    #Hem de posar-li un nom a l'event
-    #nombre = fields.Char(string="Nombre del evento", compute="_compute_nom")
-
     # Esta funció tamb pot ser una lambda
     #def _obtindre_data(self):
     #    return datetime.datetime.now()
+    
+    #Name_get ha de retornar una llista de tuples amb l'ID del registre i el nom formatat.
+    def name_get(self):
+        result = []
+        for rec in self:
+            nom_clase = "".join([c.curso for c in rec.clase]) if rec.clase else "NO_CLASE"
+            tipo_evento = rec.tipo if rec.tipo else "Desconocido"
+            nom_clase = f"{nom_clase}"
+            result.append((rec.id, f"({nom_clase}) {tipo_evento}"))
+        return result
+    
 
     tipo = fields.Selection([('0','Ausencia'), ( '1','Retraso'), ('2','Felicitación'), ('3','Comportamiento')], string="Seleccion", default="0")
     # Si volguerem mostrar també l'hora deuria de ser de tipus Datetime
