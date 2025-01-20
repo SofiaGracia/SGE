@@ -15,8 +15,15 @@ class eventos_escola(models.Model):
     def name_get(self):
         result = []
         for rec in self:
-            nom_clase = "".join([c.curso for c in rec.clase]) if rec.clase else "NO_CLASE"
-            nivel_clase = "".join([c.nivel for c in rec.clase]) if rec.clase else "X"
+            
+            nom_clase = ""
+            nivel_clase = ""
+            
+            if rec.clase:
+                nom_clase = rec.clase.curso
+                nivel_clase = dict(rec.clase._fields['nivel'].selection).get(rec.clase.nivel, "Desconocido")
+            else:
+                nom_clase = "Clase desconocida"
             tipo_evento = dict(self._fields['tipo'].selection).get(rec.tipo, "Desconocido")
             nom_clase = f"{nom_clase}"
             result.append((rec.id, f"{nivel_clase} ({nom_clase}) {tipo_evento}"))
