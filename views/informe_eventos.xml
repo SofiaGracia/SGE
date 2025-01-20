@@ -9,14 +9,47 @@
         <field name="binding_type">report</field>
     </record>
     <template id="eventos_report_template">
-        <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="docs"/>
+            <main>
+                <div class="page">
+                    <t t-foreach="docs" t-as="evento">
+                        <h2 style="text-align: center;">Informe de l'Esdeveniment</h2>
+                        <p>
+                            <strong>Identificador:</strong>
+                            <t t-set="identificador" t-value="evento.clase.nivel+' '+evento.clase.curso+' '+dict(evento._fields['tipo'].selection).get(evento.tipo, 'Desconocido') "/>
+                            <t t-esc="identificador"/>
+                        </p>
+                        <p>
+                            <strong>Data:</strong>
+                            <t t-esc="evento.fecha"/>
+                        </p>
+                        <p>
+                            <strong>Professor assignat:</strong>
+                            <t t-esc="evento.clase.tutor.name"/>
+                        </p>
+                        <p>
+                            <strong>Descripció:</strong>
+                            <t t-esc="evento.descripcion"/>
+                        </p>
+                        <h3>Estudiants associats:</h3>
+                        <ul>
+                            <t t-foreach="evento.alumno" t-as="student">
+                                <li>
+                                    <t t-esc="student.nombre"/>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+                </div>
+            </main> <!-- Tanca l'etiqueta <main> -->
+        </t>
+        <!-- <t t-call="web.html_container">
             <t t-foreach="docs" t-as="evento">
                 <div class="page">
-                    <!-- Evento com a tal no té name -->
-                    <!-- <h2>Event: <t t-esc="evento.name"/></h2> -->
                     <p><strong>Identificador:</strong> <t t-esc="dict(evento._fields['tipo'].selection).get(evento.tipo, 'Desconocido')"/></p>
                     <p><strong>Data:</strong> <t t-esc="evento.fecha"/></p>
-                    <!-- Evento com a tal no té professor pero classe sí que té tutor -->
+                    Evento com a tal no té professor pero classe sí que té tutor
                     <p><strong>Professor assignat:</strong> <t t-esc="evento.clase.tutor.name"/></p>
                     <p><strong>Descripció:</strong> <t t-esc="evento.descripcion"/></p>
                     <h3>Estudiants associats:</h3>
@@ -27,6 +60,6 @@
                     </ul>
                 </div>
             </t>
-        </t>
+        </t> -->
     </template>
 </odoo>
