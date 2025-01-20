@@ -16,7 +16,7 @@ class eventos_escola(models.Model):
         result = []
         for rec in self:
             nom_clase = "".join([c.curso for c in rec.clase]) if rec.clase else "NO_CLASE"
-            tipo_evento = rec.tipo if rec.tipo else "Desconocido"
+            tipo_evento = dict(self._fields['tipo'].selection).get(rec.tipo, "Desconocido")
             nom_clase = f"{nom_clase}"
             result.append((rec.id, f"({nom_clase}) {tipo_evento}"))
         return result

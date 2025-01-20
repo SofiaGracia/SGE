@@ -33,6 +33,7 @@
         'views/wizard_alumnos.xml',
         'views/alumnos.xml',
         'views/templates.xml',
+        'views/informe_eventos.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

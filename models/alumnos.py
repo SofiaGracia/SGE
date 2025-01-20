@@ -16,6 +16,9 @@ class alumnos_escola(models.Model):
     edad = fields.Integer(compute="_get_edad")
     clase = fields.Many2one('escola.clases', string="Clase", ondelete="cascade")
     eventos = fields.Many2many('escola.eventos', string="Eventos")
+    
+    def __str__(self):
+        return self.nombre
 
     @api.depends('fecha_nacimiento')
     def _get_edad(self):

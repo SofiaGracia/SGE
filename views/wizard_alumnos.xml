@@ -3,20 +3,22 @@
         <field name="name">alumnos.wizard.form</field>
         <field name="model">alumnos.wizard</field>
         <field name="arch" type="xml">
-            <form string="Indicar la fecha">
+            <form string="Marcar alumnos como activos">
                 <group>
-                    <field name="fecha_prova"/>
+                    <field name="alumnos_activos"/>
                 </group>
                 <footer>
-                    <button special="cancel" string="Cancelar"/>
+                    <button string="Marcar Activos" type="object" name="marcar_activos" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
         </field>
     </record>
-    <record id="lanzar_wizard" model="ir.actions.act_window">
-        <field name="name">Lanzar wizard</field>
+    <record id="action_alumnos_wizard" model="ir.actions.act_window">
+        <field name="name">Marcar Alumnos Activos</field>
         <field name="res_model">alumnos.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
+        <field name="binding_model_id" ref="model_escola_alumnos"/>
     </record>
 </odoo>
