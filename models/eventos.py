@@ -7,10 +7,6 @@ class eventos_escola(models.Model):
     _name = 'escola.eventos'
     _description = 'escola.eventos'
 
-    # Esta funció tamb pot ser una lambda
-    #def _obtindre_data(self):
-    #    return datetime.datetime.now()
-    
     #Name_get ha de retornar una llista de tuples amb l'ID del registre i el nom formatat.
     def name_get(self):
         result = []

@@ -18,7 +18,7 @@ class alumnos_escola(models.Model):
     eventos = fields.Many2many('escola.eventos', string="Eventos")
     
     def __str__(self):
-        return self.nombre
+        return self.name
 
     @api.depends('fecha_nacimiento')
     def _get_edad(self):

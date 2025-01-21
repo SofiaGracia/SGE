@@ -15,7 +15,7 @@
           <field name="alumnos"/>
           <field name="total_alumnos"/>
           <field name="descripcion"/>
-          <field name="activo"/>
+          <field name="active"/>
         </tree>
       </field>
     </record>
@@ -34,7 +34,7 @@
               <field name="tutor"/>
               <field name="alumnos"/>
               <field name="descripcion"/>
-              <field name="activo"/>
+              <field name="active"/>
             </group>
           </sheet>
         </form>
