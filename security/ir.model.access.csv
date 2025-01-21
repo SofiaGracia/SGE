@@ -1,13 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_escola_alumnos,escola.alumnos,model_escola_alumnos,base.group_user,1,1,1,1
-access_escola_clases,escola.clases,model_escola_clases,base.group_user,1,1,1,1
-access_escola_eventos,escola.eventos,model_escola_eventos,base.group_user,1,1,1,1
-access_alumnos_wizard,alumnos.wizard,model_alumnos_wizard,base.group_user,1,1,1,1
-
-access_escola_alumnos,escola.alumnos,model_escola_alumnos,escola_manager,1,1,1,1
-access_escola_clases,escola.clases,model_escola_clases,escola_manager,1,1,1,1
-access_escola_eventos,escola.eventos,model_escola_eventos,escola_manager,1,1,1,1
-access_alumnos_wizard,alumnos.wizard,model_alumnos_wizard,escola_manager,1,1,1,1
+access_escola_manager_alumnos,escola.alumnos,model_escola_alumnos,escola_manager,1,1,1,1
+access_escola_manager_clases,escola.clases,model_escola_clases,escola_manager,1,1,1,1
+access_escola_manager_eventos,escola.eventos,model_escola_eventos,escola_manager,1,1,1,1
+access_alumnos_manager_wizard,alumnos.wizard,model_alumnos_wizard,escola_manager,1,1,1,1
 
 access_escola_alumnos,escola.alumnos,model_escola_alumnos,escola_profesor,1,0,0,0
 access_escola_clases,escola.clases,model_escola_clases,escola_profesor,1,0,0,0

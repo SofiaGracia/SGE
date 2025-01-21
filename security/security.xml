@@ -7,6 +7,7 @@
         </record>
         <record id="escola_profesor" model="res.groups">
             <field name="name">Profesor</field>
+            <field name="category_id" ref="escola_manager"/>
         </record>
     </data>
 </odoo>
