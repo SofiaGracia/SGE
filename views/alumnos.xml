@@ -10,7 +10,7 @@
           <header>
             <button name="%(action_alumnos_wizard)d" type="action" string="Marcar Alumnos Activos" class="oe_highlight" />
           </header>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="apellidos"/>
           <field name="dni"/>
           <field name="fecha_nacimiento"/>
@@ -28,7 +28,7 @@
         <form string="Escola Alumnos Form">
           <sheet>
             <group>
-              <field name="nombre"/>
+              <field name="name"/>
               <field name="apellidos"/>
               <field name="dni"/>
               <field name="fecha_nacimiento"/>
